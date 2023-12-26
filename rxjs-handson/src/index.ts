@@ -1,11 +1,1 @@
-import { loadFiles$ } from 'observable-dir';
-
-const files$ = loadFiles$('\\data');
-
-const subscriber = files$.subscribe({
-  next: (files) => console.log(files),
-  error: (err) => console.error(err),
-  complete: () => console.log('done'),
-});
-
-subscriber.unsubscribe();
+console.log('Hello World')

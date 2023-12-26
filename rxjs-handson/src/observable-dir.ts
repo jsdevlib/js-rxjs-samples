@@ -19,3 +19,15 @@ export const loadFiles$ = (dir: string): Observable<Array<string>> => {
     });
   });
 };
+
+const files$ = loadFiles$('\\data');
+
+const subscriber = files$.subscribe({
+  next: (files) => console.log(files),
+  error: (err) => console.error(err),
+  complete: () => console.log('done'),
+});
+
+setTimeout(() => {
+  subscriber.unsubscribe();
+}, 1000);

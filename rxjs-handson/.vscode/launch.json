@@ -2,16 +2,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug nodemon",
+      "name": "Launch index.ts",
       "type": "node",
-      "request": "attach",
-      "restart": true,
-      "protocol": "inspector",
-      "port": 9229,
-      "localRoot": "${workspaceFolder}/dist",
-      "remoteRoot": "${workspaceFolder}",
-      "sourceMaps": true,
-      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+      "request": "launch",
+      "runtimeArgs": ["-r", "ts-node/register"],
+      "args": ["${workspaceFolder}/src/index.ts"]
     }
   ]
 }
